@@ -743,15 +743,13 @@ article.entry {
       margin-bottom: 30px; }
       article.entry .content h1:first-child, article.entry .content h2:first-child, article.entry .content h3:first-child, article.entry .content h4:first-child {
         margin-top: 0; }
-      /* page.php h1 が反応しないので追加↓ */
-      article.entry .content h1,
-      #post-38 h1 {
-        border-left: 5px solid #328bda;
-        font-size: 18px;
-        font-size: 1.8rem;
-        padding: 5px 0 5px 15px;
-        margin-top: 2em;
-        margin-bottom: 1em; }
+    article.entry .content h1 {
+      border-left: 5px solid #328bda;
+      font-size: 18px;
+      font-size: 1.8rem;
+      padding: 5px 0 5px 15px;
+      margin-top: 2em;
+      margin-bottom: 1em; }
     article.entry .content h2 {
       border-left: 2px solid #328bda;
       border-bottom: 1px dotted #ccc;

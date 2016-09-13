@@ -6,7 +6,14 @@
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
   ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('page'); ?>>
+  <!-- .entryを使いたいので配列使用 -->
+    <?php
+      $classes = array(
+        'page',
+        'entry',
+      );
+    ?>
+    <article id="post-<?php the_ID(); ?>" <?php post_class( $classes); ?>
       <h1 class="type-A"><?php the_title(); ?></h1>
       <section class="content">
         <?php the_content(); ?>
