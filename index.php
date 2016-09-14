@@ -4,9 +4,9 @@
       <div class="mainContents">
         <?php if ( is_month() ) : ?>
           <h1 class="type-A"><?php the_time('Y年m月'); ?></h1>
-        <?php eles: ?>
+        <?php else: ?>
           <h1 class="type-A"><?php wp_title(''); ?></h1>
-        <?php endif ?>
+        <?php endif; ?>
         <section class="newsBlock block">
           <?php get_template_part('loop', 'main'); ?>
         </section><!-- /.newsBlock -->
