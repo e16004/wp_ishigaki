@@ -19,8 +19,6 @@
 
   <aside class="subContents">
     <?php get_sidebar(); ?>
-    <?php get_sidebar('categories'); ?>
-    <?php get_sidebar('archives'); ?>
   </aside><!-- /.subContents -->
 </div><!-- /.contentsWrap -->
 

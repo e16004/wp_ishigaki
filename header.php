@@ -32,11 +32,11 @@ wp_head();
 
 <nav class="globalNavi">
   <?php
-    $args = array(
-      'menu' => 'global-navigation', //管理画面で作成したメニュー名
-      'container' => false, //<ul>タグを囲んでいる<div>タグを削除
-    );
-    wp_nav_menu($args);
+  $args = array(
+    'menu' => 'global-navigation', //管理画面で作成したメニュー名
+    'container' => false, //<ul>タグを囲んでいる<div>タグを削除
+  );
+wp_nav_menu($args);
   ?>
 </nav><!-- /.globalNavi -->
 
@@ -44,7 +44,7 @@ wp_head();
   <div class="breadcrumbs">
     <?php
     //パンくずリストを表示
-    if ( function_exists( 'bcn_display ' ) ) {
+    if ( function_exists( 'bcn_display' ) ) {
       bcn_display();
     }
     ?>
