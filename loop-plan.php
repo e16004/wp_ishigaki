@@ -6,7 +6,7 @@ if ( have_posts() ) :
   <a href="<?php the_permalink() ?>">
     <div class="text">
       <h2 class="name"><?php the_title(); ?></h2>
-      <p class="price">6,000円/泊</p>
+      <p class="price"><?php echo number_format( get_field( 'price' ) ); ?>円/泊</p>
       <p class="summary"><?php the_excerpt(); ?></p>
     </div>
     <figure>
