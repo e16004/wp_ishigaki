@@ -62,6 +62,20 @@ function my_pre_get_posts( $query ) {
   }
 }
 
+// 管理画面用のCSSを設定
+add_action('admin_print_styles', 'print_admin_stylesheet');
+add_action('login_head', 'print_admin_stylesheet');
+function print_admin_stylesheet() {
+  echo '<link href="' . get_template_directory_uri() . '/css/admin.css" type="text/css" rel="stylesheet" media="all" />' . PHP_EOL;
+}
+
+// 必ずビジュアルモードが表示される
+add_filter( 'wp_default_editor', 'my_wp_default_editor' );
+function my_wp_default_editor() {
+  return 'tinymce';
+}
+
+
 
 
 
