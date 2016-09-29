@@ -76,7 +76,23 @@ function my_wp_default_editor() {
 }
 
 
-
+//admin に plan のすべての権限を追加
+add_action( 'admin_init', 'my_admin_init');
+function my_admin_init() {
+  //権限を習得
+  $role = get_role( 'administrator' );
+  //権限を追加
+  $role->add_cap( 'delete_others_plans' );
+  $role->add_cap( 'delete_plans' );
+  $role->add_cap( 'delete_private_plans' );
+  $role->add_cap( 'delete_published_plans' );
+  $role->add_cap( 'edit_others_plans' );
+  $role->add_cap( 'edit_plans' );
+  $role->add_cap( 'edit_private_plans' );
+  $role->add_cap( 'edit_published_plans' );
+  $role->add_cap( 'published_plans' );
+  $role->add_cap( 'read_private_plans' );
+}
 
 
 
