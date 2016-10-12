@@ -94,5 +94,41 @@ function my_admin_init() {
   $role->add_cap( 'read_private_plans' );
 }
 
+//ショートコードメッセージの表示
+add_shortcode('test', 'shortcode_test');
+function shortcode_test() {
+  return '「ショートコードのテスト・・・」<br>';
+}
+
+add_shortcode('twitter', 'shortcode_twitter');
+function shortcode_twitter() {
+  return 'hello! Nakajima (<a href="https://twitter.com" target="_blank">@NAKAJIMA</a>) !!!!!<br>';
+}
+
+//ショートコードがパラメータに応じて変化する
+add_shortcode('apple', 'shortcode_apple');
+function shortcode_apple($atts) {
+  $atts = shortcode_atts(array(
+    'num' => rand(0, 1000),
+    ), $atts);
+  extract($atts);
+  return "りんごが". $num. "個あります<br>";
+}
+
+//クラス名がwrapの<div>タグで囲むショートコード
+add_shortcode('price', 'shortcode_price');
+function shortcode_price($atts, $content = null) {
+  return '<div class="wrap"><em>価格</em> : '. $content. '</div>';
+}
+
+//画像データへのパスを返すショートコード
+add_shortcode('dir_url', 'shortcode_url');
+function shortcode_url() {
+  echo get_template_directory_uri();
+}
+
+
+
+
 
 
